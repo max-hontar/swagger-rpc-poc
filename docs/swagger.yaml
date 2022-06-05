@@ -1,0 +1,85 @@
+definitions:
+  ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  GoodResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  Method1:
+    properties:
+      field1:
+        example: field1
+        type: string
+      field2:
+        example: 1
+        type: integer
+    type: object
+  Method2:
+    properties:
+      field1:
+        example: true
+        type: boolean
+      field2:
+        example: field2
+        type: string
+      field3:
+        example: 2
+        type: integer
+    type: object
+info:
+  contact: {}
+  description: Swagger RPC POC Description
+  title: Swagger RPC POC
+  version: 0.1.0
+paths:
+  /Method1:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Request Method1
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/Method1'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Method1
+          schema:
+            $ref: '#/definitions/GoodResponse'
+        "500":
+          description: Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      summary: Method1 handler.
+      tags:
+      - POC
+  /Method2:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Request Method2
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/Method2'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Response Method2
+          schema:
+            $ref: '#/definitions/GoodResponse'
+      summary: Method2 handler.
+      tags:
+      - POC
+swagger: "2.0"
