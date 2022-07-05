@@ -11,8 +11,8 @@ func TestCheckInTest(t *testing.T) {
 		t.FailNow()
 	}
 
-	//err = main.CheckInTest(true)
-	//if err == nil {
-	//	t.FailNow()
-	//}
+	err = main.CheckInTest(true)
+	if err == nil {
+		t.FailNow()
+	}
 }
