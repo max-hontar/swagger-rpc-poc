@@ -15,6 +15,11 @@ import (
 // @version      0.1.0
 // @description  Swagger RPC POC Description
 func main() {
+	err := CheckInTest(false)
+	if err != nil {
+		return
+	}
+
 	r := chi.NewRouter()
 
 	r.Post("/v1/rpc", rpcHandler)
@@ -169,4 +174,11 @@ func errorResp(err error, w http.ResponseWriter) {
 	errJson, _ := json.Marshal(errResp)
 	w.WriteHeader(http.StatusInternalServerError)
 	_, _ = w.Write(errJson)
+}
+
+func CheckInTest(isErr bool) error {
+	if isErr {
+		return errors.New("some error")
+	}
+	return nil
 }
