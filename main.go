@@ -184,7 +184,7 @@ func errorResp(err error, w http.ResponseWriter) {
 }
 
 func CheckInTest(isErr bool) error {
-	// just a comment added
+	// just a comment added + change
 	// Another comment
 	if isErr {
 		return errors.New("some error")

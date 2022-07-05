@@ -22,9 +22,9 @@ func TestAnotherCheckInTest(t *testing.T) {
 	if err != nil {
 		t.FailNow()
 	}
-	//
-	//err = main.CheckInTest(true)
-	//if err == nil {
-	//	t.FailNow()
-	//}
+
+	err = main.AnotherCheckInTest(true)
+	if err == nil {
+		t.FailNow()
+	}
 }
