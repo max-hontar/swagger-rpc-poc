@@ -169,6 +169,8 @@ func rpcHandlerMethod2(request []byte) (string, error) {
 }
 
 func errorResp(err error, w http.ResponseWriter) {
+	// Add comment which should decrease coverage
+	// Add comment which should decrease coverage
 	fmt.Println("error: " + err.Error())
 	errResp := ErrorResponse{err.Error()}
 	errJson, _ := json.Marshal(errResp)
@@ -177,6 +179,8 @@ func errorResp(err error, w http.ResponseWriter) {
 }
 
 func CheckInTest(isErr bool) error {
+	// just a comment added
+	// Another comment
 	if isErr {
 		return errors.New("some error")
 	}
