@@ -20,6 +20,11 @@ func main() {
 		return
 	}
 
+	err = AnotherCheckInTest(false)
+	if err != nil {
+		return
+	}
+
 	r := chi.NewRouter()
 
 	r.Post("/v1/rpc", rpcHandler)
@@ -179,8 +184,15 @@ func errorResp(err error, w http.ResponseWriter) {
 }
 
 func CheckInTest(isErr bool) error {
-	// just a comment added
+	// just a comment added + change
 	// Another comment
+	if isErr {
+		return errors.New("some error")
+	}
+	return nil
+}
+
+func AnotherCheckInTest(isErr bool) error {
 	if isErr {
 		return errors.New("some error")
 	}
